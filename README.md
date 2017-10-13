@@ -1,6 +1,6 @@
 # mvc
  ### springmvc 简单版本
- ###idea git的使用
+ ### idea git的使用
     echo "# mvc" >> README.md  --创建md文件
     echo >> .gitignore --创建gitignore文件 过滤不需要提交的文件和目录
     git init   --初始化本地仓库并添加git版本控制
