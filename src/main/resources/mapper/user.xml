@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.mvc.dao.UserDao">
+  <resultMap type="User" id="BaseResultMap">
+    <result column="user_id" jdbcType="BIGINT" property="userId" />
+    <result column="user_name" jdbcType="VARCHAR" property="userName" />
+    <result column="user_phone" jdbcType="BIGINT" property="userPhone" />
+    <result column="score" jdbcType="INTEGER" property="score" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+
+
+  <select id="selectByPrimaryKey" parameterType="User" resultMap="BaseResultMap">
+    select
+    user_id, user_name, user_phone, score, create_time
+    from _user
+    where user_id = #{userId}
+  </select>
+
+  <delete id="deleteByPrimaryKey" parameterType="User">
+    delete from _user
+    where user_id = #{userId}
+  </delete>
+
+  <insert id="insert" parameterType="User">
+    insert into _user (user_id, user_name, user_phone, score,
+    create_time)
+    values (#{userId}, #{userName}, #{userPhone}, #{score},
+    #{createTime})
+  </insert>
+
+  <update id="updateByPrimaryKey" parameterType="User">
+    update _user
+    set user_name = #{userName},
+    user_phone = #{userPhone},
+    score = #{score},
+    create_time = #{createTime}
+    where user_id = #{userId}
+  </update>
+</mapper>
