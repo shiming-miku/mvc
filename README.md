@@ -11,3 +11,4 @@
                                   --小知识: window环境 注释要用双引号，mac,gitlinux用单引号
     git remote add origin https://github.com/shiming-miku/mvc.git --连接到远程仓库
     git push -u origin master --提交到远程仓库git
+    git pull --更新文件
