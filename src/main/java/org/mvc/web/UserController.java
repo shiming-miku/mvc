@@ -1,6 +1,5 @@
 package org.mvc.web;
 
-import javax.servlet.http.HttpServletRequest;
 
 
 import org.mvc.domain.User;
