@@ -17,7 +17,7 @@
       <param-name>contextConfigLocation</param-name>
       <param-value>classpath:spring/spring_*.xml</param-value>
     </init-param>
-    <load-on-startup>1</load-on-startup>
+    <load-on-startup>1</load-on-startup><!-- Servlet加载优先级  -->
   </servlet>
   <servlet-mapping>
     <servlet-name>spring-dispatcher</servlet-name>
