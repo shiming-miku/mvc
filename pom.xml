@@ -9,9 +9,10 @@
   <url>http://maven.apache.org</url>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <spring.version>4.3.2.RELEASE</spring.version>
+    <spring.version>5.0.8.RELEASE</spring.version>
     <spring-security.version>4.1.3.RELEASE</spring-security.version>
     <guava.version>19.0</guava.version>
+    <jetty-maven-plugin.version>9.4.9.v20180320</jetty-maven-plugin.version>
   </properties>
   <dependencies>
     <!--common start -->
@@ -259,6 +260,18 @@
       <version>2.4.0</version>
     </dependency>
 
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-examples</artifactId>
+      <version>1.2.3</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.mina</groupId>
+      <artifactId>mina-core</artifactId>
+      <version>2.0.7</version>
+    </dependency>
+
   </dependencies>
   <build>
     <plugins>
@@ -300,11 +313,24 @@
           <!-- 	        <server>tomcat7</server> 此处的名字必须和setting.xml中配置的ID一致 -->
           <!-- 	        <path>/MyMvc</path> 此处的名字是项目发布的工程名 -->
           <port>80</port>
-          <path>/mvc</path>
+          <path>/</path>
           <uriEncoding>UTF-8</uriEncoding>
-          <finalName>mvc</finalName>
+          <!--<finalName>mvc</finalName>-->
           <server>tomcat7</server>
         </configuration>
+        <!--<groupId>org.eclipse.jetty</groupId>
+        <artifactId>jetty-maven-plugin</artifactId>
+        <version>${jetty-maven-plugin.version}</version>
+        <configuration>
+          <httpConnector>
+            <port>80</port>
+          </httpConnector>
+          <webAppConfig>
+            <contextPath>/</contextPath>
+          </webAppConfig>
+          <stopKey>shutdown</stopKey>
+          <stopPort>9966</stopPort>
+        </configuration>-->
       </plugin>
     </plugins>
   </build>
